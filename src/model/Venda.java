@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author 20182PF.CC0076
- */
 import java.time.LocalDateTime;
 
 public class Venda {
@@ -21,6 +13,10 @@ public class Venda {
         this.valorVenda = valorVenda;
         this.formaPgto = formaPgto;
         this.formaContrato = formaContrato;
+    }
+    
+    public Venda(){
+        
     }
 
     public LocalDateTime getDataVenda() {
@@ -54,5 +50,15 @@ public class Venda {
     public void setFormaContrato(FormaContrato formaContrato) {
         this.formaContrato = formaContrato;
     }
+
+    @Override
+    public String toString() {
+        return "Venda{" + "dataVenda=" 
+                + dataVenda + ", valorVenda=" 
+                + valorVenda + ", formaPgto=" 
+                + formaPgto + ", formaContrato=" 
+                + formaContrato + '}';
+    }
+    
 }
 
