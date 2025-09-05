@@ -19,7 +19,7 @@ public class CadastroVendaC {
     public static void main(String[] args) {
         JFrame janelaAdd = new JFrame();
         janelaAdd.setVisible(true);
-        janelaAdd.setSize(400, 400);
+        janelaAdd.setSize(500, 500);
         janelaAdd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaAdd.setTitle("Criar venda");
         
@@ -40,7 +40,7 @@ public class CadastroVendaC {
         cmbCont.addItem(FormaContrato.APRAZO);
         cmbCont.addItem(FormaContrato.AVISTA);
         cmbCont.addItem(FormaContrato.PARCELADO);
-        //BOTAO DE SALVAR
+
         JButton btnSalvar = new JButton("Cadastrar Produto");
         
         painel.add(lblData);

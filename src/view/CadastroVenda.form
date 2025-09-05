@@ -19,37 +19,34 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="lblData" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="txtData" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnSalvar" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblPag" min="-2" max="-2" attributes="0"/>
                           <Component id="lblCont" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblValor" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtValor" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cmbPag" pref="105" max="32767" attributes="0"/>
+                          <Component id="cmbCont" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblPag" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cmbCont" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbPag" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblData" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblValor" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnSalvar" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtData" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="txtValor" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,22 +83,22 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblData">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Data"/>
+        <Property name="text" type="java.lang.String" value="DATA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblValor">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Valor"/>
+        <Property name="text" type="java.lang.String" value="VALOR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPag">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Forma de pagamento"/>
+        <Property name="text" type="java.lang.String" value="FORMA DE PAGAMENTO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCont">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Forma de contrato"/>
+        <Property name="text" type="java.lang.String" value="FORMA DE CONTRATO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSalvar">
@@ -122,7 +119,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtValor">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Digite o n&#xfa;mero inteiro apenas"/>
+        <Property name="text" type="java.lang.String" value="Apenas n&#xfa;meros inteiros"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorActionPerformed"/>

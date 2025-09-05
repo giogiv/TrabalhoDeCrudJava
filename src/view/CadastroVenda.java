@@ -15,19 +15,15 @@ public class CadastroVenda extends javax.swing.JDialog {
     public CadastroVenda(java.awt.Frame parent, boolean modal) {
         
   super(parent, modal);
-    
-    initComponents(); // A MONTAGEM DAS PEÇAS DEVE VIR PRIMEIRO!
+    initComponents(); 
 
-    // AGORA o seu código pode manipular as peças que já foram montadas.
     cmbPag.removeAllItems(); 
     cmbCont.removeAllItems();
     
-    // Adiciona as formas de pagamento
     for (FormaPgto pgto : FormaPgto.values()) {
         cmbPag.addItem(pgto);
     }
     
-    // Adiciona as formas de contrato
     for (FormaContrato contrato : FormaContrato.values()) {
         cmbCont.addItem(contrato);
     }
@@ -47,13 +43,13 @@ public class CadastroVenda extends javax.swing.JDialog {
         cmbPag = new javax.swing.JComboBox<>();
         cmbCont = new javax.swing.JComboBox<>();
 
-        lblData.setText("Data");
+        lblData.setText("DATA");
 
-        lblValor.setText("Valor");
+        lblValor.setText("VALOR");
 
-        lblPag.setText("Forma de pagamento");
+        lblPag.setText("FORMA DE PAGAMENTO");
 
-        lblCont.setText("Forma de contrato");
+        lblCont.setText("FORMA DE CONTRATO");
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +65,7 @@ public class CadastroVenda extends javax.swing.JDialog {
             }
         });
 
-        txtValor.setText("Digite o número inteiro apenas");
+        txtValor.setText("Apenas números inteiros");
         txtValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValorActionPerformed(evt);
@@ -98,28 +94,26 @@ public class CadastroVenda extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblData)
-                            .addGap(129, 129, 129)
-                            .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCont, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblValor)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPag)
-                            .addGap(50, 50, 50)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cmbPag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                            .addComponent(lblCont))
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbPag, 0, 105, Short.MAX_VALUE)
+                            .addComponent(cmbCont, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblData)
+                            .addComponent(lblValor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtData, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,10 +150,9 @@ public class CadastroVenda extends javax.swing.JDialog {
             return;
         }
 
-        // --- LÓGICA CORRETA PARA LER A DATA ---
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         java.time.LocalDate dataLocal = java.time.LocalDate.parse(dataTexto, formatador);
-        LocalDateTime dataVenda = dataLocal.atStartOfDay(); // Converte para data e hora
+        LocalDateTime dataVenda = dataLocal.atStartOfDay(); 
         
         double valor = Double.parseDouble(valorTexto);
         FormaPgto formaPagamento = (FormaPgto) cmbPag.getSelectedItem();
@@ -167,7 +160,7 @@ public class CadastroVenda extends javax.swing.JDialog {
 
         this.venda = new Venda(dataVenda, valor, formaPagamento, formaContrato);
 
-        this.dispose(); // Fecha a janela
+        this.dispose(); 
 
     } catch (java.time.format.DateTimeParseException ex) {
         JOptionPane.showMessageDialog(this, "Formato de data inválido! Use: dd/MM/yyyy", "Erro de Formato", JOptionPane.ERROR_MESSAGE);
@@ -221,10 +214,8 @@ public class CadastroVenda extends javax.swing.JDialog {
     }
     this.venda = venda;
     
-    // --- LÓGICA CORRETA PARA MOSTRAR A DATA ---
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     if (venda.getDataVenda() != null) {
-        // Pega a data e hora, converte para apenas data, e então formata
         txtData.setText(venda.getDataVenda().toLocalDate().format(formatter));
     } else {
         txtData.setText("");
@@ -232,7 +223,6 @@ public class CadastroVenda extends javax.swing.JDialog {
 
     txtValor.setText(String.valueOf(venda.getValorVenda()));
 
-    // O NetBeans vai mudar 'cmbPag.setSelectedItem(String)' para o correto
     if (venda.getFormaPgto() != null) {
         cmbPag.setSelectedItem(venda.getFormaPgto());
     } else {

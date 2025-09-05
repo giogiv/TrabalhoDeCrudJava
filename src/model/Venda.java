@@ -16,7 +16,6 @@ public class Venda {
     }
     
     public Venda(){
-        
     }
 
     public LocalDateTime getDataVenda() {
@@ -58,6 +57,15 @@ public class Venda {
                 + valorVenda + ", formaPgto=" 
                 + formaPgto + ", formaContrato=" 
                 + formaContrato + '}';
+    }
+    
+    public String exibirDados(){
+        String aux = "== Venda cadastrada: ==\n";
+        aux += "Data da venda: "+dataVenda+"\n";
+        aux += "Valor da venda: "+valorVenda+"\n";
+        aux += "Forma de pagamento: "+formaPgto+"\n";
+        aux += "Forma de contrato: "+formaContrato+"\n";
+        return aux;
     }
     
 }
